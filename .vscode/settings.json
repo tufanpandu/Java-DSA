@@ -1,0 +1,6 @@
+{
+  "java.debug.settings.onBuildFailureProceed": true,
+  "files.autoSave": "afterDelay",
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnType": true
+}
