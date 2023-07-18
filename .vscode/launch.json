@@ -6,6 +6,13 @@
   "configurations": [
     {
       "type": "java",
+      "name": "Graph9",
+      "request": "launch",
+      "mainClass": "Graph9",
+      "projectName": "Java Programing Language_607d8836"
+    },
+    {
+      "type": "java",
       "name": "Graph7",
       "request": "launch",
       "mainClass": "Graph7",
