@@ -6,6 +6,27 @@
   "configurations": [
     {
       "type": "java",
+      "name": "Graph12",
+      "request": "launch",
+      "mainClass": "Graph12",
+      "projectName": "Java Programing Language_607d8836"
+    },
+    {
+      "type": "java",
+      "name": "Graph8",
+      "request": "launch",
+      "mainClass": "Graph.Graph8",
+      "projectName": "Java Programing Language_607d8836"
+    },
+    {
+      "type": "java",
+      "name": "Graph10",
+      "request": "launch",
+      "mainClass": "Graph.Graph10",
+      "projectName": "Java Programing Language_607d8836"
+    },
+    {
+      "type": "java",
       "name": "Graph9",
       "request": "launch",
       "mainClass": "Graph9",

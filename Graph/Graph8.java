@@ -41,6 +41,7 @@ public class Graph8 {
         //Iterate over graph
         for (int i = 0; i < graph.length; i++) {
             ////Iterate graph's first component vertex.
+            //Find the neighbour
             for (int j = 0; j < graph[i].size(); j++) {
                 Edge e = graph[i].get(j);
                 //Now increase indegree of vertex by one
