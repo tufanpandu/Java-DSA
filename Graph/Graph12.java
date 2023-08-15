@@ -59,7 +59,8 @@ public class Graph12 {
     public static void primAlgo(ArrayList<Edge> graph[]) {
         // step -1 Create boolean visit array for tracking node is already visit or not
         boolean vist[] = new boolean[graph.length];
-        // Step-2 Create PriorityQueue for sort the pair as minimum value
+        // Step-2 Create PriorityQueue for sort the pair as minimum value based on cost
+
         PriorityQueue<Pair> pq = new PriorityQueue();
         pq.add(new Pair(0, 0)); // add the source in to the pq.
         // Step -3 Initialize a variable finalcost for store the result
