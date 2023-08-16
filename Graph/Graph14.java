@@ -18,6 +18,7 @@ public class Graph14 {
 
     public static int connectingCities(int cities[][]) {
         PriorityQueue<Edge> pq = new PriorityQueue<>();
+        // for track vertex visited or not.
         boolean visit[] = new boolean[cities.length];
 
         pq.add(new Edge(0, 0));
@@ -26,18 +27,19 @@ public class Graph14 {
         while (!pq.isEmpty()) {
             Edge curr = pq.remove();
 
-            if (!visit[curr.dest]) {
-                visit[curr.dest] = true;
-                finalCost += curr.cost;
+            if (!visit[curr.dest]) { // Check condition if current vertex is visited or not
+                visit[curr.dest] = true; // 1at - Make current vertex vistied true.
+                finalCost += curr.cost; // add to the fina cost
 
-                for (int i = 0; i < cities[curr.dest].length; i++) {
-                    if (cities[curr.dest][i] != 0) {
+                for (int i = 0; i < cities[curr.dest].length; i++) { // Iterate over cities array length.
+                    if (cities[curr.dest][i] != 0) { // if cost is 0 then do nothing else add the destination and cost
+                                                     // to the pq.
                         pq.add(new Edge(i, cities[curr.dest][i]));
                     }
                 }
             }
         }
-
+        // return the final cost which is chepest cost or connected cities.
         return finalCost;
     }
 
