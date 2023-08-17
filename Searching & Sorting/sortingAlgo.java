@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class JavaBasic {
+public class sortingAlgo {
 
     public static void bubbleSort(int arr[]) {
         for (int i = 0; i < arr.length; i++) {

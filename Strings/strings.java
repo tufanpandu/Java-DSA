@@ -1,3 +1,5 @@
+package Strings;
+
 import java.net.SocketTimeoutException;
 import java.util.*;
 
