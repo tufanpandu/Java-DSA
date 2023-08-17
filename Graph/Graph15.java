@@ -23,7 +23,17 @@ public class Graph15 {
             return x;
         }
         /// call recursively the find function
-        return find(parent[x]);
+        // return find(parent[x]); ======= We have batter option for optimize this line
+        /*
+         * --If we return above method then we search for parent for every time when
+         * mehod
+         * is called.
+         * --If we update the parent[x] for one time then we don't need to call every
+         * time recursively.
+         */
+
+        // Optimize method
+        return parent[x] = find(parent[x]);
     }
 
     // create Union function

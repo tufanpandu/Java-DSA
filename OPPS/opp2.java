@@ -1,4 +1,4 @@
-package OPPS;
+import java.util.*;
 
 public class opp2 {
     public static void main(String[] args) {
@@ -11,7 +11,7 @@ class Animal {
     String color;
 
     Animal() {
-        System.out.print("Animal Constructor is called");
+        System.out.println("Animal Constructor is called");
     }
 
 }
