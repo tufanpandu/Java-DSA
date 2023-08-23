@@ -1,9 +1,9 @@
 package Graph;
+
 import java.util.*;
 
-
-public class Graph3 {
-      static class Edge {
+public class DFS {
+    static class Edge {
         int src;
         int des;
         int weight;
@@ -45,9 +45,9 @@ public class Graph3 {
 
     //// BFS - Breadth First Search
     public static void bfs(ArrayList<Edge> graph[]) {
-        //Create a Queue for track Numbers.
+        // Create a Queue for track Numbers.
         Queue<Integer> q = new LinkedList<>();
-        //Create a Boolean array for track visited true or false.
+        // Create a Boolean array for track visited true or false.
         boolean visit[] = new boolean[graph.length];
         q.add(0); // Starting point or source code.
 
@@ -55,7 +55,7 @@ public class Graph3 {
             int curr = q.remove(); // temove number from queue and store it on .
 
             if (!visit[curr]) {
-                //Print and visit 
+                // Print and visit
                 System.out.print(curr + " ");
                 visit[curr] = true;
                 // find the Neighbours.
@@ -72,21 +72,19 @@ public class Graph3 {
         // Visit and print
         System.out.print(curr + " ");
         visit[curr] = true;
-        //Find Neighbours and call dfs() function recursively.
+        // Find Neighbours and call dfs() function recursively.
         for (int i = 0; i < graph[curr].size(); i++) {
-            Edge e = graph[curr].get(i); // It give me neighbours of curr 
-            //Now check visited is true or false if true then call dfs recursively.
+            Edge e = graph[curr].get(i); // It give me neighbours of curr
+            // Now check visited is true or false if true then call dfs recursively.
             if (!visit[e.des]) {
                 dfs(graph, e.des, visit);
-          }
-   
+            }
+
         }
     }
-    
-    
 
     // ///Q.1️⃣ Has Path ?
-    //For given src and des .tell if a path exists from src to dest.
+    // For given src and des .tell if a path exists from src to dest.
     // src =0; , dest =5;.
 
     public static boolean hasPath(ArrayList<Edge>[] graph, int src, int des, boolean visit[]) {
@@ -94,14 +92,14 @@ public class Graph3 {
         if (src == des) {
             return true;
         }
-        //Update visit
+        // Update visit
         visit[src] = true;
 
-        //Fint Neighbour of src
+        // Fint Neighbour of src
         for (int i = 0; i < graph[src].size(); i++) {
             Edge e = graph[src].get(i);
 
-            //check if  src is visited or not and call recursively hasPath() function.
+            // check if src is visited or not and call recursively hasPath() function.
             if (!visit[e.des] && hasPath(graph, e.des, des, visit)) {
                 return true;
             }

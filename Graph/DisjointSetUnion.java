@@ -1,7 +1,7 @@
 import java.util.*;
 
 ///====================  Disjoint Set Union =========================================
-public class Graph15 {
+public class DisjointSetUnion {
     // initialze the no.of groups
     static int n = 7;
     // Create parent array and rank array which is static type.

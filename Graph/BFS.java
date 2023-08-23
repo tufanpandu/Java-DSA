@@ -1,9 +1,11 @@
 package Graph;
+
 import java.util.*;
+
 //// Graphs Traversal
 /// (a) Breadth First Search (BFS)
-public class Graph2 {
-    
+public class BFS {
+
     static class Edge {
         int src;
         int des;
@@ -17,8 +19,8 @@ public class Graph2 {
     }
 
     static void createGraphs(ArrayList<Edge> graph[]) {
-        for(int i =0 ; i< graph.length;i++){  // iterate whole graph length
-           graph[i] = new ArrayList<>();// cerate new arraylist on every index of graph.
+        for (int i = 0; i < graph.length; i++) { // iterate whole graph length
+            graph[i] = new ArrayList<>();// cerate new arraylist on every index of graph.
         }
 
         graph[0].add(new Edge(0, 1, 1));
@@ -43,32 +45,30 @@ public class Graph2 {
         graph[5].add(new Edge(5, 6, 1));
 
     }
-      
+
     public static void bfs(ArrayList<Edge> graph[]) {
-       Queue<Integer> q = new LinkedList<>(); // Create a queue
-       boolean visited[] = new boolean[graph.length]; // Create boolean array which size is same with graph length.
+        Queue<Integer> q = new LinkedList<>(); // Create a queue
+        boolean visited[] = new boolean[graph.length]; // Create boolean array which size is same with graph length.
         q.add(0); // Starting Point
 
         while (!q.isEmpty()) {// while Queue is not empty
-            int curr = q.remove();  // 1st- remove frome queue
+            int curr = q.remove(); // 1st- remove frome queue
 
-            if (!visited[curr]) { /// If curr vertex is not visited  (Means visit false) 2nd - check not visit
-                System.out.print(curr +" "); //3rd - print curr
+            if (!visited[curr]) { /// If curr vertex is not visited (Means visit false) 2nd - check not visit
+                System.out.print(curr + " "); // 3rd - print curr
                 visited[curr] = true; // 4th - difine visit of curr is now true.
-                for (int i = 0; i < graph[curr].size(); i++) { //iterate the graphs curr size
+                for (int i = 0; i < graph[curr].size(); i++) { // iterate the graphs curr size
                     Edge e = graph[curr].get(i);
-                    q.add(e.des); //5th - add the negibours of curr  in queue 
-              }
+                    q.add(e.des); // 5th - add the negibours of curr in queue
+                }
             }
         }
-   }
-
+    }
 
     public static void main(String[] args) {
-        
-        
+
         int v = 7;
-       ArrayList<Edge> graph[] = new ArrayList[v];
+        ArrayList<Edge> graph[] = new ArrayList[v];
 
         createGraphs(graph);
         bfs(graph);

@@ -6,6 +6,13 @@
   "configurations": [
     {
       "type": "java",
+      "name": "Graph16",
+      "request": "launch",
+      "mainClass": "Graph16",
+      "projectName": "Java Programing Language_607d8836"
+    },
+    {
+      "type": "java",
       "name": "Graph12",
       "request": "launch",
       "mainClass": "Graph12",

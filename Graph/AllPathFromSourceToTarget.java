@@ -3,7 +3,7 @@ package Graph;
 import java.util.*;
 
 //////All Path From Source to Target ////
-public class Graph9 {
+public class AllPathFromSourceToTarget {
     static class Edge {
         int src;
         int dest;

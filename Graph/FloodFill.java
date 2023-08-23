@@ -1,12 +1,16 @@
 import java.util.*;
 
-public class Graph17 {
+///======================== Flood Fill Algorithms ============================
+public class FloodFill {
     public static void helper(int[][] image, int sr, int sc, int color, boolean visit[][], int orgColor) {
         // Base Case : Check if current poistion is valid for flood fill .
         if (sr < 0 || sc < 0 || sr >= image.length || sc >= image[0].length || visit[sr][sc]
                 || image[sr][sc] != orgColor) {
             return; // If base case condition is not vaile then stop the
         }
+        // Mark the current cell as visited before any recursive calls.
+        // visit array is by default "false" so update the value with "true".
+        visit[sr][sc] = true;
         image[sr][sc] = color; // change the colour of current cell.
         // left
         helper(image, sr, sc - 1, color, visit, orgColor);

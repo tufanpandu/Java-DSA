@@ -4,7 +4,7 @@ import java.util.*;
 
 /// Dijkstra's Algorithms
 
-public class Graph10 {
+public class DijkstrasAlgorithms {
 
     static class Edge {
         int src;

@@ -1,6 +1,7 @@
 import java.util.*;
 
-public class Graph14 {
+///======= Connecting Cities with Minimum Cost ====================
+public class ConnectingCitiesWithMinimumCost {
     static class Edge implements Comparable<Edge> {
         int dest;
         int cost;

@@ -1,8 +1,9 @@
 package Graph;
+
 ///////////////////// ✅👉Cycle Detection in Undirected graph 😍//////
 import java.util.*;
 
-public class Graph4 {
+public class CycleDetectionInUndirectedGraph {
     static class Edge {
         int src;
         int des;
@@ -35,7 +36,7 @@ public class Graph4 {
 
         graph[4].add(new Edge(4, 3));
     }
-    
+
     public static boolean detectCycle(ArrayList<Edge>[] graph) {
         boolean visit[] = new boolean[graph.length];
 
@@ -51,15 +52,15 @@ public class Graph4 {
     }
 
     public static boolean detectCycleUtil(ArrayList<Edge>[] graph, boolean visit[], int curr, int par) {
-        //First Visti the Vertex and make true.
+        // First Visti the Vertex and make true.
         visit[curr] = true;
 
-        // Find Neighbour 
+        // Find Neighbour
         for (int i = 0; i < graph[curr].size(); i++) {
             Edge e = graph[curr].get(i);
-            // Case 1 -  Check if neighbour is not visited .
+            // Case 1 - Check if neighbour is not visited .
             if (!visit[e.des]) {
-                //  and Detect Cycle then return true.
+                // and Detect Cycle then return true.
                 if (detectCycleUtil(graph, visit, e.des, curr)) {
                     return true;
                 }
@@ -72,18 +73,17 @@ public class Graph4 {
 
             // Case - 3 If Neighbour visited and also Parent. then simple conteneue.
         }
-       
+
         // If Cycle is not detect then return false .
         return false;
     }
 
     public static void main(String[] args) {
-        
-        
-      int v = 5;
-    @SuppressWarnings("unchecked")
-     ArrayList<Edge>[] graph = (ArrayList<Edge>[]) new ArrayList[v];
-      createGraphs(graph);
-       System.out.print(detectCycle(graph));
+
+        int v = 5;
+        @SuppressWarnings("unchecked")
+        ArrayList<Edge>[] graph = (ArrayList<Edge>[]) new ArrayList[v];
+        createGraphs(graph);
+        System.out.print(detectCycle(graph));
     }
 }

@@ -1,7 +1,7 @@
 import java.util.*;
 
 // Prim's Algorithm
-public class Graph12 {
+public class PrimsAlgorithm {
     static class Edge {
         int src;
         int dest;

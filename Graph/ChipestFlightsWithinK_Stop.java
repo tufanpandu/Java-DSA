@@ -4,7 +4,7 @@ import java.util.LinkedList;
 /// - 👉👉👉Chepest Flights within K stops.🧑‍💻
 ///// - All values are positive.
 
-public class Graph13 {
+public class ChipestFlightsWithinK_Stop {
     // Edge Class
     static class Edge {
         int src;

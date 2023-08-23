@@ -1,7 +1,8 @@
 package Graph;
+
 import java.util.*;
 
-public class Graph8 {
+public class TopologicalSortingUsingBFS {
     // Topological Sorting Using BFS
     static class Edge {
         int src;
@@ -13,17 +14,13 @@ public class Graph8 {
         }
     }
 
-
-        public static void createGraph(ArrayList<Edge> graph[]) {
+    public static void createGraph(ArrayList<Edge> graph[]) {
         for (int i = 0; i < graph.length; i++) {
             graph[i] = new ArrayList<>();
         }
 
-        //graph[0].add(new Edge(0))  & graph[1].add(new Edge(0)) No destination
+        // graph[0].add(new Edge(0)) & graph[1].add(new Edge(0)) No destination
 
-
-
-       
         graph[2].add(new Edge(2, 3));
 
         graph[3].add(new Edge(3, 1));
@@ -34,23 +31,23 @@ public class Graph8 {
         graph[5].add(new Edge(5, 0));
         graph[5].add(new Edge(5, 2));
     }
-   
-/// Calculate Indegree
+
+    /// Calculate Indegree
 
     public static void calcIndegree(ArrayList<Edge>[] graph, int indegree[]) {
-        //Iterate over graph
+        // Iterate over graph
         for (int i = 0; i < graph.length; i++) {
-            ////Iterate graph's first component vertex.
-            //Find the neighbour
+            //// Iterate graph's first component vertex.
+            // Find the neighbour
             for (int j = 0; j < graph[i].size(); j++) {
                 Edge e = graph[i].get(j);
-                //Now increase indegree of vertex by one
+                // Now increase indegree of vertex by one
                 indegree[e.dest]++;
             }
-            
+
         }
     }
-    
+
     public static void topSort(ArrayList<Edge>[] graph) {
         int indegree[] = new int[graph.length];
         calcIndegree(graph, indegree);
@@ -70,23 +67,19 @@ public class Graph8 {
             // Find curr value neighbour
             for (int i = 0; i < graph[curr].size(); i++) {
                 Edge e = graph[curr].get(i);
-                indegree[e.dest]--; //decrease by one
+                indegree[e.dest]--; // decrease by one
 
                 if (indegree[e.dest] == 0) {
                     q.add(e.dest);
                 }
-            
-             }
+
+            }
         }
 
         System.out.println();
     }
 
-
-  
-
-  
-    public static void main(String [] args){
+    public static void main(String[] args) {
         int v = 6;
         ArrayList<Edge> graph[] = new ArrayList[v];
         createGraph(graph);

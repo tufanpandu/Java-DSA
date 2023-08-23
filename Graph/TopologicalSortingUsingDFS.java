@@ -1,7 +1,8 @@
 package Graph;
+
 import java.util.*;
 
-public class Graph7 {
+public class TopologicalSortingUsingDFS {
     // Topological Sorting using DFS
     static class Edge {
         int src;
@@ -18,7 +19,7 @@ public class Graph7 {
             graph[i] = new ArrayList<>();
         }
 
-        //graph[0].add(new Edge(0))  & graph[1].add(new Edge(0)) No destination
+        // graph[0].add(new Edge(0)) & graph[1].add(new Edge(0)) No destination
 
         graph[2].add(new Edge(2, 3));
 
@@ -31,13 +32,12 @@ public class Graph7 {
         graph[5].add(new Edge(5, 2));
     }
 
-
     public static void topSort(ArrayList<Edge>[] graph) {
-        //Create boolean vist and Stack 
+        // Create boolean vist and Stack
         boolean vist[] = new boolean[graph.length];
         Stack<Integer> s = new Stack();
 
-        //Iterate graph component
+        // Iterate graph component
         for (int i = 0; i < graph.length; i++) {
             if (!vist[i]) {
                 // Call the topSortUtility function
@@ -53,7 +53,7 @@ public class Graph7 {
 
     public static void topSortUtil(ArrayList<Edge> graph[], int curr, boolean vist[], Stack<Integer> s) {
         vist[curr] = true;
-        
+
         // find current neighbour
         for (int i = 0; i < graph[curr].size(); i++) {
             Edge e = graph[curr].get(i);
@@ -63,12 +63,13 @@ public class Graph7 {
                 ;
             }
         }
-        
-        //push values in stack
+
+        // push values in stack
 
         s.push(curr);
     }
-    public static void main(String [] args){
+
+    public static void main(String[] args) {
         int v = 6;
         ArrayList<Edge> graph[] = new ArrayList[v];
         createGraph(graph);
