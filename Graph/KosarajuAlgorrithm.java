@@ -56,7 +56,7 @@ public class KosarajuAlgorrithm {
 
     // Kosaraju Algorithms
     public static void kosaraju(ArrayList<Edge> graph[], int V) {
-        // Step - 1
+        // Step - 1 Get node in stack (Topological sort).
         Stack<Integer> s = new Stack<>();
         boolean visit[] = new boolean[V];
 
@@ -66,7 +66,7 @@ public class KosarajuAlgorrithm {
             }
         }
 
-        // Steip -2
+        // Steip -2 Transpose the graph
         ArrayList<Edge> transpose[] = new ArrayList[V];
         // First iterate over graph
         for (int i = 0; i < graph.length; i++) {
@@ -81,7 +81,7 @@ public class KosarajuAlgorrithm {
             }
         }
 
-        // Step - 3
+        // Step - 3 Do DFS according to stack nodes on the transpose graph.
         while (!s.isEmpty()) {
             int curr = s.pop();
 
