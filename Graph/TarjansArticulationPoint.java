@@ -31,13 +31,13 @@ public class TarjansArticulationPoint {
 
     graph[3].add(new Edge(3, 0));
     graph[3].add(new Edge(3, 4));
-    // graph[3].add(new Edge(3, 5));
+    graph[3].add(new Edge(3, 5));
 
     graph[4].add(new Edge(4, 3));
-    // graph[4].add(new Edge(4, 5));
+    graph[4].add(new Edge(4, 5));
 
-    // graph[5].add(new Edge(5, 3));
-    // graph[5].add(new Edge(5, 4));
+    graph[5].add(new Edge(5, 3));
+    graph[5].add(new Edge(5, 4));
 
   }
 
@@ -68,7 +68,7 @@ public class TarjansArticulationPoint {
         // When backtrack we update the low[]
         low[curr] = Math.min(low[curr], low[neigh]);
         // Check AP conditon (2nd inner loop condition)
-        if (par != 1 && dt[curr] < low[neigh]) {
+        if (par != -1 && dt[curr] <= low[neigh]) {
           ap[curr] = true; // geting the AP point
         }
         // update the cildren for current node
@@ -115,7 +115,7 @@ public class TarjansArticulationPoint {
 
   public static void main(String[] args) {
 
-    int V = 5;
+    int V = 6;
     ArrayList<Edge> graph[] = new ArrayList[V];
     createGraph(graph);
     getAP(graph, V);
