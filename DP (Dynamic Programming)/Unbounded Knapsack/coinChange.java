@@ -1,5 +1,7 @@
 ///// ======= Coin Change (Variation of unbounded Knapsack) =====================
 public class coinChange {
+
+    // Using 2D Array
     public static int coinChangeTab(int coin[], int sum) {
         int n = coin.length;
         // Create dp
@@ -28,7 +30,30 @@ public class coinChange {
             }
         }
 
+        // Print the table
+        for (int i = 0; i < dp.length; i++) {
+            for (int j = 0; j < dp[0].length; j++) {
+                System.out.print(dp[i][j] + " ");
+            }
+            System.out.println();
+        }
+
         return dp[n][sum];
+    }
+
+    // Using single array
+    public static int coinChangeTwo(int coin[], int sum) {
+        int dp[] = new int[sum + 1];
+        // Initializ
+        dp[0] = 1;
+        // Interate coins
+        for (int i = 0; i < coin.length; i++) {
+            for (int j = coin[i]; j < sum + 1; j++) {
+                dp[j] += dp[j - coin[i]];
+            }
+        }
+
+        return dp[sum];
     }
 
     public static void main(String[] args) {
@@ -36,5 +61,7 @@ public class coinChange {
         int sum = 10;
 
         System.out.println(coinChangeTab(coin, sum));
+        System.out.println();
+        System.out.println(coinChangeTwo(coin, sum));
     }
 }
