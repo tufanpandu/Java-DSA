@@ -52,6 +52,11 @@ public class coinChange {
                 dp[j] += dp[j - coin[i]];
             }
         }
+        // print
+        for (int i = 0; i < dp.length; i++) {
+            System.out.print(dp[i] + " ");
+        }
+        System.out.println();
 
         return dp[sum];
     }
